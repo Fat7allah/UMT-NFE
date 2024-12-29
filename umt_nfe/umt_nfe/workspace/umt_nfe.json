@@ -2,8 +2,7 @@
  "cards_label": "Quick Access",
  "category": "Modules",
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"UMT NFE Management\",\"level\":4}},{\"type\":\"card\",\"data\":{\"label\":\"Members\",\"items\":[{\"label\":\"Member\",\"link_to\":\"Member\",\"type\":\"DocType\"},{\"label\":\"Membership Card\",\"link_to\":\"Membership Card\",\"type\":\"DocType\"}]}},{\"type\":\"card\",\"data\":{\"label\":\"Organization\",\"items\":[{\"label\":\"Federation Structure\",\"link_to\":\"Federation Structure\",\"type\":\"DocType\"},{\"label\":\"Mutual Structure\",\"link_to\":\"Mutual Structure\",\"type\":\"DocType\"}]}},{\"type\":\"card\",\"data\":{\"label\":\"Finance\",\"items\":[{\"label\":\"Income\",\"link_to\":\"Income\",\"type\":\"DocType\"},{\"label\":\"Expense\",\"link_to\":\"Expense\",\"type\":\"DocType\"}]}}]",
- "creation": "2024-12-29 20:21:13.000000",
+ "creation": "2024-12-29 20:00:54.000000",
  "developer_mode_only": 0,
  "disable_user_customization": 0,
  "docstatus": 0,
@@ -16,8 +15,96 @@
  "is_default": 0,
  "is_standard": 1,
  "label": "UMT NFE",
- "links": [],
- "modified": "2024-12-29 20:21:13.000000",
+ "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Members",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Member",
+      "link_to": "Member",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Membership Card",
+      "link_to": "Membership Card",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Organization",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Federation Structure",
+      "link_to": "Federation Structure",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Mutual Structure",
+      "link_to": "Mutual Structure",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Finance",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Income",
+      "link_to": "Income",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Expense",
+      "link_to": "Expense",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+ ],
+ "modified": "2024-12-29 20:00:54.000000",
  "modified_by": "Administrator",
  "module": "UMT NFE",
  "name": "UMT NFE",
