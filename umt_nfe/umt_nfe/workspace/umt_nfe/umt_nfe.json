@@ -1,0 +1,160 @@
+{
+ "charts": [],
+ "content": [
+  {
+   "cards": [
+    {
+     "card": "Members"
+    },
+    {
+     "card": "Membership Cards"
+    }
+   ],
+   "label": "Membership Management"
+  },
+  {
+   "cards": [
+    {
+     "card": "Federation Structure"
+    },
+    {
+     "card": "Mutual Structure"
+    }
+   ],
+   "label": "Organization Structure"
+  },
+  {
+   "cards": [
+    {
+     "card": "Income"
+    },
+    {
+     "card": "Expense"
+    }
+   ],
+   "label": "Financial Management"
+  }
+ ],
+ "creation": "2024-12-29 19:19:52.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "education",
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "UMT NFE",
+ "links": [
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Members",
+   "link_count": 0,
+   "link_to": "Member",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Membership Cards",
+   "link_count": 0,
+   "link_to": "Membership Card",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Federation Structure",
+   "link_count": 0,
+   "link_to": "Federation Structure",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Mutual Structure",
+   "link_count": 0,
+   "link_to": "Mutual Structure",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Income",
+   "link_count": 0,
+   "link_to": "Income",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Expense",
+   "link_count": 0,
+   "link_to": "Expense",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-12-29 19:19:52.000000",
+ "modified_by": "Administrator",
+ "module": "UMT NFE",
+ "name": "UMT NFE",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "All Members",
+   "link_to": "Member",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Active Memberships",
+   "link_to": "Membership Card",
+   "stats_filter": "{\"status\":\"Paid\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Federation Structure",
+   "link_to": "Federation Structure",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Financial Overview",
+   "link_to": "Income",
+   "type": "DocType"
+  }
+ ],
+ "title": "UMT NFE"
+}
