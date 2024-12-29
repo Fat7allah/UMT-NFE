@@ -82,29 +82,6 @@ scheduler_events = {
     ]
 }
 
-# Home Pages
-# ----------
-# application home page (will override Website Settings)
-# home_page = "login"
-
-# website user home page (by Role)
-role_home_page = {
-    "System Manager": "umt_nfe"
-}
-
-# Workspace
-# ----------
-workspace_config = {
-    "UMT NFE": {
-        "label": "UMT NFE",
-        "icon": "education",
-        "module": "UMT NFE",
-        "type": "module",
-        "link": "umt_nfe",
-        "color": "#1abc9c"
-    }
-}
-
 # Testing
 # -------
 # before_tests = "umt_nfe.install.before_tests"
