@@ -91,11 +91,24 @@ scheduler_events = {
     ]
 }
 
+# Workspace
+# ----------
+workspace_config = {
+    "UMT NFE": {
+        "label": "UMT NFE",
+        "icon": "education",
+        "module": "UMT NFE",
+        "type": "module",
+        "link": "umt_nfe",
+        "color": "#1abc9c"
+    }
+}
+
+# Default Workspace
+default_workspace = "UMT NFE"
+
 # Desktop Icons
 # ---------------
-
-# Desk properties
-# --------------
 desk_properties = {
     "UMT NFE": {
         "module_name": "UMT NFE",
