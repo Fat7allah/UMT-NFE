@@ -1,24 +1,8 @@
 {
- "cards": [
-  {
-   "hidden": 0,
-   "label": "Members Management",
-   "links": "[\n    {\n        \"label\": \"Member\",\n        \"name\": \"Member\",\n        \"type\": \"doctype\",\n        \"doctype\": \"Member\"\n    },\n    {\n        \"label\": \"Membership Card\",\n        \"name\": \"Membership Card\",\n        \"type\": \"doctype\",\n        \"doctype\": \"Membership Card\"\n    }\n]"
-  },
-  {
-   "hidden": 0,
-   "label": "Organization",
-   "links": "[\n    {\n        \"label\": \"Federation Structure\",\n        \"name\": \"Federation Structure\",\n        \"type\": \"doctype\",\n        \"doctype\": \"Federation Structure\"\n    },\n    {\n        \"label\": \"Mutual Structure\",\n        \"name\": \"Mutual Structure\",\n        \"type\": \"doctype\",\n        \"doctype\": \"Mutual Structure\"\n    }\n]"
-  },
-  {
-   "hidden": 0,
-   "label": "Finance",
-   "links": "[\n    {\n        \"label\": \"Income\",\n        \"name\": \"Income\",\n        \"type\": \"doctype\",\n        \"doctype\": \"Income\"\n    },\n    {\n        \"label\": \"Expense\",\n        \"name\": \"Expense\",\n        \"type\": \"doctype\",\n        \"doctype\": \"Expense\"\n    }\n]"
-  }
- ],
+ "cards_label": "Quick Access",
  "category": "Modules",
  "charts": [],
- "creation": "2024-12-29 19:56:45.000000",
+ "creation": "2024-12-29 20:00:54.000000",
  "developer_mode_only": 0,
  "disable_user_customization": 0,
  "docstatus": 0,
@@ -31,8 +15,96 @@
  "is_default": 0,
  "is_standard": 1,
  "label": "UMT NFE",
- "links": [],
- "modified": "2024-12-29 19:56:45.000000",
+ "links": [
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Members",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Member",
+      "link_to": "Member",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Membership Card",
+      "link_to": "Membership Card",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Organization",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Federation Structure",
+      "link_to": "Federation Structure",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Mutual Structure",
+      "link_to": "Mutual Structure",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Finance",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Income",
+      "link_to": "Income",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Expense",
+      "link_to": "Expense",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+ ],
+ "modified": "2024-12-29 20:00:54.000000",
  "modified_by": "Administrator",
  "module": "UMT NFE",
  "name": "UMT NFE",
@@ -49,7 +121,6 @@
    "doc_view": "List",
    "label": "All Members",
    "link_to": "Member",
-   "stats_filter": "",
    "type": "DocType"
   },
   {
