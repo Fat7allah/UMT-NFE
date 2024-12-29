@@ -9,8 +9,8 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_js = "/assets/js/umt_nfe.min.js"
-app_include_css = "/assets/css/umt_nfe.min.css"
+# app_include_css = "/assets/umt_nfe/css/umt_nfe.css"
+# app_include_js = "/assets/umt_nfe/js/umt_nfe.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/umt_nfe/css/umt_nfe_web.css"
@@ -47,11 +47,18 @@ home_page = "login"
 
 # website user home page (by Role)
 role_home_page = {
-    "System Manager": "UMT NFE"
+    "System Manager": "umt-nfe"
 }
 
 # Generators
 # ----------
+website_route_rules = [
+    {"from_route": "/umt-nfe", "to_route": "UMT NFE"}
+]
+
+# Desk Notifications
+# ---------------
+notification_config = "umt_nfe.notifications.get_notification_config"
 
 # Document Events
 # ---------------
@@ -91,23 +98,6 @@ scheduler_events = {
     ]
 }
 
-# Desktop Icons
-# ---------------
-
-# Desk properties
-# --------------
-desk_properties = {
-    "UMT NFE": {
-        "module_name": "UMT NFE",
-        "type": "module",
-        "label": "UMT NFE",
-        "link": "List/Member",
-        "color": "#1abc9c",
-        "icon": "octicon octicon-organization",
-        "category": "Modules"
-    }
-}
-
 # Testing
 # -------
 # before_tests = "umt_nfe.install.before_tests"
@@ -117,6 +107,13 @@ desk_properties = {
 #
 # override_whitelisted_methods = {
 #     "frappe.desk.doctype.event.event.get_events": "umt_nfe.event.get_events"
+# }
+#
+# each overriding function accepts a `data` argument;
+# generated from the base implementation of the doctype dashboard,
+# along with any modifications made in other Frappe apps
+# override_doctype_dashboards = {
+#     "Task": "umt_nfe.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -137,3 +134,24 @@ desk_properties = {
 # ----------
 # before_job = ["umt_nfe.utils.before_job"]
 # after_job = ["umt_nfe.utils.after_job"]
+
+# User Data Protection
+# --------------------
+
+# user_data_fields = [
+#     {
+#         "doctype": "{doctype_1}",
+#         "filter_by": "{filter_by}",
+#         "redact_fields": ["{field_1}", "{field_2}"],
+#         "partial": 1,
+#     },
+#     {
+#         "doctype": "{doctype_2}",
+#         "filter_by": "{filter_by}",
+#         "partial": 1,
+#     },
+#     {
+#         "doctype": "{doctype_3}",
+#         "strict": False,
+#     }
+# ]
