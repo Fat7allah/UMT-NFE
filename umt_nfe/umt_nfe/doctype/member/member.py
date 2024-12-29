@@ -37,3 +37,12 @@ class Member(Document):
             title_parts.append(self.role_type)
             
         self.title = " - ".join(title_parts)
+
+    def has_website_permission(doc, ptype, user, verbose=False):
+        if not user:
+            return False
+        
+        if "System Manager" in frappe.get_roles(user):
+            return True
+            
+        return frappe.has_permission("Member", ptype, user=user)

@@ -13,8 +13,8 @@ app_license = "MIT"
 # app_include_js = "/assets/umt_nfe/js/umt_nfe.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/umt_nfe/css/umt_nfe_web.css"
-# web_include_js = "/assets/umt_nfe/js/umt_nfe_web.js"
+web_include_css = "/assets/umt_nfe/css/umt_nfe_web.css"
+web_include_js = "/assets/umt_nfe/js/umt_nfe_web.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "umt_nfe/public/scss/website"
@@ -44,12 +44,13 @@ doctype_js = {
 # ----------
 
 # application home page (will override Website Settings)
-# home_page = "login"
+home_page = "home"
 
 # website user home page (by Role)
-# role_home_page = {
-#   "Role": "home_page"
-# }
+role_home_page = {
+    "System Manager": "home",
+    "Administrator": "home"
+}
 
 # Generators
 # ----------
@@ -111,6 +112,25 @@ doctype_js = {
 # has_permission = {
 #   "Event": "frappe.desk.doctype.event.event.has_permission",
 # }
+
+# Portal Settings
+has_website_permission = {
+    "Member": "umt_nfe.umt_nfe.doctype.member.member.has_website_permission",
+    "Membership Card": "umt_nfe.umt_nfe.doctype.membership_card.membership_card.has_website_permission",
+    "Federation Structure": "umt_nfe.umt_nfe.doctype.federation_structure.federation_structure.has_website_permission",
+    "Mutual Structure": "umt_nfe.umt_nfe.doctype.mutual_structure.mutual_structure.has_website_permission",
+    "Income": "umt_nfe.umt_nfe.doctype.income.income.has_website_permission",
+    "Expense": "umt_nfe.umt_nfe.doctype.expense.expense.has_website_permission"
+}
+
+website_route_rules = [
+    {"from_route": "/members", "to_route": "Member"},
+    {"from_route": "/membership-cards", "to_route": "Membership Card"},
+    {"from_route": "/federation-structures", "to_route": "Federation Structure"},
+    {"from_route": "/mutual-structures", "to_route": "Mutual Structure"},
+    {"from_route": "/incomes", "to_route": "Income"},
+    {"from_route": "/expenses", "to_route": "Expense"}
+]
 
 # DocType Class
 # ---------------
