@@ -40,6 +40,22 @@ doctype_js = {
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
+# Home Pages
+# ----------
+# application home page (will override Website Settings)
+home_page = "login"
+
+# website user home page (by Role)
+role_home_page = {
+    "System Manager": "umt-nfe"
+}
+
+# Generators
+# ----------
+website_route_rules = [
+    {"from_route": "/umt-nfe", "to_route": "UMT NFE"}
+]
+
 # Desk Notifications
 # ---------------
 notification_config = "umt_nfe.notifications.get_notification_config"
@@ -80,29 +96,6 @@ scheduler_events = {
     "monthly": [
         "umt_nfe.tasks.monthly"
     ]
-}
-
-# Home Pages
-# ----------
-# application home page (will override Website Settings)
-# home_page = "login"
-
-# website user home page (by Role)
-role_home_page = {
-    "System Manager": "umt_nfe"
-}
-
-# Workspace
-# ----------
-workspace_config = {
-    "UMT NFE": {
-        "label": "UMT NFE",
-        "icon": "education",
-        "module": "UMT NFE",
-        "type": "module",
-        "link": "umt_nfe",
-        "color": "#1abc9c"
-    }
 }
 
 # Testing
