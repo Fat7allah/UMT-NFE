@@ -17,7 +17,7 @@
                             <input type="text" class="form-control" id="searchInput" placeholder="Search members...">
                         </div>
                         {% if frappe.session.user != 'Guest' %}
-                        <button class="btn btn-primary" onclick="window.location.href='/new-member?new=1'">
+                        <button class="btn btn-primary" onclick="window.location.href='/new-member'">
                             Add New Member
                         </button>
                         {% endif %}

@@ -82,6 +82,11 @@ scheduler_events = {
     ]
 }
 
+# Website Route Rules
+website_route_rules = [
+    {"from_route": "/new-member", "to_route": "templates/pages/new_member"},
+]
+
 # Testing
 # -------
 # before_tests = "umt_nfe.install.before_tests"
