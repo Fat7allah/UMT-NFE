@@ -1,0 +1,178 @@
+{% extends "templates/includes/portal_layout.html" %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1>Add New Member</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-body">
+                    <form id="new-member-form">
+                        <!-- Personal Information -->
+                        <h4 class="mb-3">Personal Information</h4>
+                        <div class="form-group">
+                            <label for="full_name">Full Name *</label>
+                            <input type="text" class="form-control" id="full_name" name="full_name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="birth_date">Birth Date *</label>
+                                <input type="date" class="form-control" id="birth_date" name="birth_date" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="gender">Gender *</label>
+                                <select class="form-control" id="gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Profession Information -->
+                        <h4 class="mb-3 mt-4">Profession Information</h4>
+                        <div class="form-group">
+                            <label for="profession">Profession *</label>
+                            <select class="form-control" id="profession" name="profession" required>
+                                <option value="">Select Profession</option>
+                                {% for prof in professions %}
+                                <option value="{{ prof }}">{{ prof }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group" id="subject-group" style="display: none;">
+                            <label for="subject">Subject *</label>
+                            <select class="form-control" id="subject" name="subject">
+                                <option value="">Select Subject</option>
+                                {% for sub in subjects %}
+                                <option value="{{ sub }}">{{ sub }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="institution_branch">Institution/Branch *</label>
+                            <input type="text" class="form-control" id="institution_branch" name="institution_branch" required>
+                        </div>
+
+                        <!-- Education -->
+                        <h4 class="mb-3 mt-4">Education</h4>
+                        <div class="form-group">
+                            <label for="education_level">Education Level *</label>
+                            <select class="form-control" id="education_level" name="education_level" required>
+                                <option value="">Select Education Level</option>
+                                <option value="Baccalaureate">Baccalaureate</option>
+                                <option value="Bachelor">Bachelor</option>
+                                <option value="Master">Master</option>
+                                <option value="Doctorate">Doctorate</option>
+                            </select>
+                        </div>
+
+                        <!-- Role Information -->
+                        <h4 class="mb-3 mt-4">Role Information</h4>
+                        <div class="form-group">
+                            <label for="role">Role *</label>
+                            <select class="form-control" id="role" name="role" required>
+                                <option value="">Select Role</option>
+                                {% for r in roles %}
+                                <option value="{{ r }}">{{ r }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group" id="role-type-group" style="display: none;">
+                            <label for="role_type">Role Type *</label>
+                            <select class="form-control" id="role_type" name="role_type">
+                                <option value="">Select Role Type</option>
+                                {% for rt in role_types %}
+                                <option value="{{ rt }}">{{ rt }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <h4 class="mb-3 mt-4">Contact Information</h4>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="phone">Phone *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="email">Email *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="text-right mt-4">
+                            <a href="/members" class="btn btn-secondary mr-2">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Save Member</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+frappe.ready(function() {
+    // Show/hide subject field based on profession
+    $('#profession').on('change', function() {
+        var profession = $(this).val();
+        var teachingProfessions = ['Primary Teaching', 'Middle School Teaching', 'High School Teaching'];
+        if (teachingProfessions.includes(profession)) {
+            $('#subject-group').show();
+            $('#subject').prop('required', true);
+        } else {
+            $('#subject-group').hide();
+            $('#subject').prop('required', false);
+        }
+    });
+
+    // Show/hide role type based on role
+    $('#role').on('change', function() {
+        var role = $(this).val();
+        if (role === 'Educational Administration') {
+            $('#role-type-group').show();
+            $('#role_type').prop('required', true);
+        } else {
+            $('#role-type-group').hide();
+            $('#role_type').prop('required', false);
+        }
+    });
+
+    // Handle form submission
+    $('#new-member-form').on('submit', function(e) {
+        e.preventDefault();
+        
+        var formData = {};
+        $(this).serializeArray().forEach(function(item) {
+            formData[item.name] = item.value;
+        });
+
+        frappe.call({
+            method: 'umt_nfe.templates.pages.new_member.save_member',
+            args: {
+                data: formData
+            },
+            callback: function(r) {
+                if (!r.exc) {
+                    frappe.show_alert({
+                        message: 'Member added successfully',
+                        indicator: 'green'
+                    });
+                    setTimeout(function() {
+                        window.location.href = '/members';
+                    }, 2000);
+                }
+            }
+        });
+    });
+});
+</script>
+{% endblock %}
