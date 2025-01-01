@@ -125,6 +125,7 @@ has_website_permission = {
 
 website_route_rules = [
     {"from_route": "/members", "to_route": "Member"},
+    {"from_route": "/new-member", "to_route": "new-member"},
     {"from_route": "/membership-cards", "to_route": "Membership Card"},
     {"from_route": "/federation-structures", "to_route": "Federation Structure"},
     {"from_route": "/mutual-structures", "to_route": "Mutual Structure"},
